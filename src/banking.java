@@ -26,6 +26,27 @@ public class banking {
 
         while (opcao != 4) {
             System.out.println(menu);
+            opcao = leitura.nextInt();
+
+            if (opcao == 1){
+                System.out.println("O saldo disponivel é " + balance);
+            } else if (opcao ==2){
+                System.out.println("Qual o valor que deseja transferir?");
+                double valor = leitura.nextInt();
+                if (valor > balance){
+                    System.out.println("Saldo insuficiente");
+                } else {
+                    balance -= valor;
+                    System.out.println("Novo saldo" + balance);
+                }
+            }else if (opcao == 3){
+                System.out.println("Qual valor recebido?");
+                double valor = leitura.nextInt();
+                balance += valor;
+                System.out.println("Novo saldo" + balance);
+            }else if (opcao != 4){
+                System.out.println("Opção invalida");
+            }
 
 
         }
